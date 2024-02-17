@@ -12,14 +12,15 @@ import java.util.Random;
  */
 public class civiles extends Personas{
     String ID;
+    String genero;
     String depa;
     Date fechaN;
     ArrayList <Tramites> tramites=new ArrayList();
 
-    public civiles(int depa, Date fechaN, String pw, String name, boolean civil) {
+    public civiles(int depa, Date fechaN, String pw, String name, boolean civil, String genero) {
         super(pw, name, civil);
         Random faust=new Random();
-        
+        this.genero=genero;
         this.fechaN = fechaN;
         if (depa==1) {
             this.depa="Francisco Morazan";
@@ -43,7 +44,11 @@ public class civiles extends Personas{
         }
     }
 
-    public String getID() {
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    public String getnumID() {
         return ID;
     }
 
@@ -57,6 +62,10 @@ public class civiles extends Personas{
 
     public void setDepa(String depa) {
         this.depa = depa;
+    }
+
+    public String getGenero() {
+        return genero;
     }
 
     public Date getFechaN() {
